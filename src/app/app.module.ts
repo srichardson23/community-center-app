@@ -17,6 +17,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { AuthService } from "./shared/services/auth.service";
 
+import { MatCardModule } from '@angular/material/card'
+
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { AuthService } from "./shared/services/auth.service";
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    MatCardModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
