@@ -1,53 +1,24 @@
-<div class="displayTable">
-    <div class="displayTableCell">
-      <div class="authBlock">
-        <h3>Sign Up</h3>
-        <div class="formGroup">
-          <input
-            type="email"
-            class="formControl"
-            placeholder="Email Address"
-            #userEmail
-            required
-          />
-        </div>
-        <div class="formGroup">
-          <input
-            type="password"
-            class="formControl"
-            placeholder="Password"
-            #userPwd
-            required
-          />
-        </div>
-        <div class="formGroup">
-          <input
-            type="button"
-            class="btn btnPrimary"
-            value="Sign Up"
-            (click)="authService.SignUp(userEmail.value, userPwd.value)"
-          />
-        </div>
-        <div class="formGroup">
-          <span class="or"><span class="orInner">Or</span></span>
-        </div>
-        <!-- Continue with Google -->
-        <div class="formGroup">
-          <button
-            type="button"
-            class="btn googleBtn"
-            (click)="authService.GoogleAuth()"
-          >
-            <i class="fab fa-google-plus-g"></i>
-            Continue with Google
-          </button>
-        </div>
-      </div>
-      <div class="redirectToLogin">
-        <span
-          >Already have an account?
-          <span class="redirect" routerLink="/sign-in">Log In</span></span
-        >
-      </div>
+<div class="container">
+  <mat-card class="sign-in-widget">
+    <mat-card-header>
+      <h2>Sign Up</h2>
+    </mat-card-header>
+    <mat-card-subtitle>
+      <p class="subtitle">Please enter a username and password to receive an email verification</p>
+    </mat-card-subtitle>
+    <div class="form">
+      <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+      <input type="password" class="formControl" placeholder="Password" #userPwd required>
+      <button type="submit" (click)="authService.SignUp(userEmail.value, userPwd.value)">Sign Up</button>
     </div>
-  </div>
+    <span>Or</span>
+    <div class="formGroup">
+      <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+        <span class="continue-btn-span">Continue with Google</span>
+      </button>
+    </div>
+    <div>
+      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+    </div>
+  </mat-card>
+</div>
